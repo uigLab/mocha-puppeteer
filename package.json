@@ -1,0 +1,23 @@
+{
+  "name": "mocha-puppeteer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive test",
+    "testB": "mocha test/bootstrap.js --recursive test",
+    "server": "http-server src",
+    "test2": "mocha index.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "http-server": "^0.12.1",
+    "mocha": "^7.0.1",
+    "puppeteer": "^2.1.1"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
