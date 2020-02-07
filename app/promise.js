@@ -1,9 +1,11 @@
 const fs = require("fs");
 
+// Read a text file and return a callback(err, data)
 const readCow = cb => {
   fs.readFile("cow.txt", "utf8", cb);
 };
 
+// Custom promise function with setTimeout
 const myPromiseFunction = (arg) => {
   return new Promise((resolve, reject) => {
     let data = arg;
@@ -18,15 +20,6 @@ const myPromiseFunction = (arg) => {
   });
 };
 
-async function msg(){
-  try{
-    const msg = await myPromiseFunction();
-    console.log(msg)
-  } catch{
-    console.log("error")
-  }
-
-}
 
 module.exports = {
   myPromiseFunction,
