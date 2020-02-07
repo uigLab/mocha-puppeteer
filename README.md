@@ -14,7 +14,7 @@ yarn or npm install
 
 ### Usage
 
-To make facebook credential create an .env file like given .env.example. Now you’re good to go.
+To make facebook credential create an `.env` file like `.env.example`. Now you’re good to go.
 
 
 ### Run Test
