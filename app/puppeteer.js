@@ -5,7 +5,7 @@ const facebookLogin = async () => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await page.goto("https://www.facebook.com/");
-  /* simple test case */
+
   const emailInput = "#email";
   const passwordInput = "#pass";
   const submitSelector = "#u_0_b";
@@ -50,8 +50,6 @@ const websiteScrap = async () => {
 
   await page.waitFor(HEADING_SELECTOR);
   heading = await page.$eval(HEADING_SELECTOR, heading => heading.innerText);
-
-  console.log(heading)
 
   await browser.close();
 
