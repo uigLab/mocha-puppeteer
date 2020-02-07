@@ -1,4 +1,29 @@
 const puppeteer = require("puppeteer");
+require("dotenv").config();
+
+const facebookLogin = async () => {
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+  await page.goto("https://www.facebook.com/");
+  /* simple test case */
+  const emailInput = "#email";
+  const passwordInput = "#pass";
+  const submitSelector = "#u_0_b";
+
+  linkEmail = await page.$(emailInput);
+  linkPassword = await page.$(passwordInput);
+  linkSubmit = await page.$(submitSelector);
+
+  await linkEmail.click();
+  await linkEmail.type(process.env.FB_EMAIL); // add the email address for linkedin //
+
+  await linkPassword.click();
+  await linkPassword.type(process.env.FB_PASS); // add password for linkedin account
+
+  await linkSubmit.click();
+  await page.screenshot({ path: "facebook.png" });
+  await browser.close();
+};
 
 const generatePdf = async () => {
   const browser = await puppeteer.launch();
@@ -10,6 +35,8 @@ const generatePdf = async () => {
 
   await browser.close();
 };
+
+
 const websiteScrap = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -39,6 +66,7 @@ const printScreen = async () => {
   await browser.close();
 };
 
+
 const  getDimensions = async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -57,32 +85,10 @@ const  getDimensions = async () => {
 };
 
 
-const getData = async () => {
-  const browser = await puppeteer.launch({
-    // will greatly affect the results
-    headless: true,
-    // important for running on various server where root user is present
-    args: ["--no-sandbox", "--disable-setuid-sandbox"]
-  });
-
-  // actual navigation happens here
-  const page = await browser.newPage();
-  await page.goto("https://example.com");
-
-  // sample data collection
-  const title = await page.title();
-  const outerHTML = await page.evaluate(
-    () => document.querySelector("head").outerHTML
-  );
-  // cleanup once done
-  await browser.close();
-  return { title, outerHTML };
-};
-
 module.exports = {
+  facebookLogin,
   generatePdf,
   printScreen,
   websiteScrap,
-  getDimensions,
-  getData
+  getDimensions
 };
