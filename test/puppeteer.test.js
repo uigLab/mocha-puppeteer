@@ -29,10 +29,6 @@ describe("#Puppeteer with Facebook", function() {
     expect(response.status()).to.equal(200);
   });
 
-  it("Should generate screenshot of facebook homepage", async () => {
-    await page.screenshot({ path: "facebook-login.png" });
-  });
-
   it("Should login facebook successfully", async () => {
     const emailInput = "#email";
     const passwordInput = "#pass";
