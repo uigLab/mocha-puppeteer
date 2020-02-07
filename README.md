@@ -34,4 +34,4 @@ And it generate a `timeline.png` from your facebook timeline in your project's r
 <img src='./timeline.png' width='600' alt='npm start'>
 </p>
 
-Happy Coding!
+Head to `./test/puppeteer.test.js` and start to hack! Happy Coding!
