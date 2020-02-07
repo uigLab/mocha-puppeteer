@@ -1,7 +1,7 @@
 
 # Mocha Puppeteer
 
-Basic testing of JavaScript apps with Mocha, Chai and Puppeteer. Here we use async and awit to call promise function.
+Basic testing of JavaScript apps with Mocha, Chai and Puppeteer. Here we use async and awit to call promise function to login facebook and take screenshot of our profile.
 
 ## Quick Start
 
@@ -14,7 +14,7 @@ yarn or npm install
 
 ### Usage
 
-To make facebook credential create an `.env` file like `.env.example`. Now you’re good to go.
+To make FACEBOOK credential create an `.env` file like `.env.example`. Now you’re good to go.
 
 
 ### Run Test
